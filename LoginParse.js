@@ -4,5 +4,13 @@ function LoginParse() {
     var userloginintent = $_GET.get("userLoginIntent");
     var email = $_GET.get("email");
     var password = $_GET.get("password");
-    return UserModel + userloginintent + email + password;
+    var uridecoded = {
+        UserModel: UserModel,
+        userloginintent: userloginintent,
+        email: email,
+        password: password
+      };
+    var JSONencoded = JSON.stringify(uridecoded);
+    console.log(JSONencoded);
+    return JSONencoded;
 }
